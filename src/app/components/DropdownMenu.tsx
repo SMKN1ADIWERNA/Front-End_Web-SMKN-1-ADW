@@ -12,7 +12,8 @@ import {
   Volleyball as VolleyballIcon,
   Award as AwardIcon,
   School as SchoolIcon,
-  Smile as SmileIcon
+  Smile as SmileIcon,
+  User
 } from 'lucide-react';
 import { motion, AnimatePresence } from 'framer-motion';
 
@@ -89,6 +90,17 @@ const SubDropdownMenu: React.FC<SubDropdownMenuProps> = ({ isOpen, onMouseEnter,
           <Link href="/sambutan-kepala-sekolah-tim" className="block px-4 py-3 text-gray-800 hover:bg-gray-100 transition duration-300 ease-in-out flex items-center rounded-b-xl">
             <MicIcon className="mr-2 text-green-600" />
             Sambutan Kepala Sekolah
+          </Link>
+          <Link href="/tim-sekolah" className="block px-4 py-3 text-gray-800 hover:bg-gray-100 transition duration-300 ease-in-out flex items-center rounded-b-xl">
+          <User className='mr-2 text-purple-600' />
+          Tim SMKN 1 Adiwerna
+          </Link>
+          <Link
+            href="/penghargaan-sekolah"
+            className="block px-4 py-3 text-gray-800 hover:bg-gray-100 transition duration-300 ease-in-out flex items-center rounded-b-xl"
+          >
+            <User className="mr-2 text-yellow-600" />
+            Penghargaan Sekolah
           </Link>
         </motion.div>
       )}
