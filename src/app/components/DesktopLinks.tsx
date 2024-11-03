@@ -11,7 +11,7 @@ const DesktopLinks = () => {
   return (
     <div className="hidden md:flex space-x-4">
       <Link href="/" 
-        className="text-black dark:text-white hover:text-blue-500 hover:bg-blue-100 dark:hover:bg-blue-700 transition duration-300 ease-in-out p-2 rounded-full transform active:scale-95 active:shadow-inner flex items-center">
+      className="text-black dark:text-white hover:text-blue-500 hover:bg-blue-100 dark:hover:bg-blue-700 transition duration-300 ease-in-out p-2 rounded-full transform active:scale-95 active:shadow-inner flex items-center">
         <Home className="mr-1" />
         Beranda
       </Link>

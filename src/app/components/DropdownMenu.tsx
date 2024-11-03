@@ -129,15 +129,16 @@ const DropdownMenu: React.FC = () => {
 
   return (
     <div className="relative" onMouseEnter={handleMouseEnter} onMouseLeave={handleMouseLeave}>
-      <button
-        onClick={toggleDropdown}
-        className="text-gray-900 bg-gray-100 hover:bg-gray-200 transition duration-300 ease-in-out p-2 rounded-full shadow-md flex items-center"
-      >
-        Lainnya
-        <svg className="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
-        </svg>
-      </button>
+<button
+  onClick={toggleDropdown}
+  className="text-gray-800 bg-white hover:bg-gray-200 transition duration-300 ease-in-out p-2 rounded-full shadow-md flex items-center"
+>
+  Lainnya
+  <svg className="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
+  </svg>
+</button>
+
       <AnimatePresence>
         {isDropdownOpen && (
           <motion.div
@@ -183,6 +184,38 @@ const DropdownMenu: React.FC = () => {
                 onMouseLeave={handleRuangSiswaSubMouseLeave}
               />
             </div>
+            <Link
+              href="/fasilitas"
+              className="block px-4 py-3 text-gray-800 hover:bg-gray-100 transition duration-300 ease-in-out flex items-center"
+              onClick={() => setIsDropdownOpen(false)}
+            >
+              <User className="mr-2 text-red-600" />
+              Fasilitas
+            </Link>
+            <Link
+              href="/forms"
+              className="block px-4 py-3 text-gray-800 hover:bg-gray-100 transition duration-300 ease-in-out flex items-center rounded-b-xl"
+              onClick={() => setIsDropdownOpen(false)}
+            >
+              <EditIcon className="mr-2 text-purple-600" />
+              Kotak Saran
+            </Link>
+            <Link
+              href="/lsp"
+              className="block px-4 py-3 text-gray-800 hover:bg-gray-100 transition duration-300 ease-in-out flex items-center rounded-b-xl"
+              onClick={() => setIsDropdownOpen(false)}
+            >
+              <User className="mr-2 text-yellow-600" />
+              Lembaga Sertifikasi Profesi (LSP)
+            </Link>
+            <Link
+              href="/gallery"
+              className="block px-4 py-3 text-gray-800 hover:bg-gray-100 transition duration-300 ease-in-out flex items-center rounded-b-xl"
+              onClick={() => setIsDropdownOpen(false)}
+            >
+              <User className="mr-2 text-yellow-600" />
+              galeri
+            </Link>
             <Link href="/tentang-kami" className="block px-4 py-3 text-gray-800 hover:bg-gray-100 transition duration-300 ease-in-out flex items-center">
               <BuildingIcon className="mr-2 text-purple-600" />
               Tentang Kami
