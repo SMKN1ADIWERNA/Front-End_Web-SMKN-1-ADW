@@ -10,7 +10,9 @@ const MainLayout: React.FC<LayoutProps> = ({ children }) => {
   return (
     <div>
       <Navbar />
-      <main>{children}</main>
+      <main> 
+        {children}
+      </main>
     </div>
   );
 };
