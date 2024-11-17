@@ -1,7 +1,7 @@
 // app/profil/page.tsx
 import React from 'react';
 
-const blogs = () => {
+const artikel = () => {
   return (
     <div>
       <h1>Hello World</h1>
@@ -10,4 +10,4 @@ const blogs = () => {
   );
 };
 
-export default blogs;
+export default artikel;

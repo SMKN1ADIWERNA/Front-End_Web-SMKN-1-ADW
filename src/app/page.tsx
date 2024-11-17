@@ -1,6 +1,10 @@
 import HeroSection from "./beranda/HeroSection";
 import SchoolStatistik from "./beranda/StatistikSekolah/SchoolStatistik";
 import Image from "next/image";
+import Agenda from "./agenda/agenda";
+import ThumbnailProfile from "./beranda/thumbnailprofile";
+import PrestasiSekolah from "./beranda/prestasisekolah";
+import KiprahAlumni from "./beranda/KiprahAlumni";
 
 
 export default function Home() {
@@ -8,8 +12,12 @@ export default function Home() {
     <div className="bg-gray-100">
       <HeroSection />
       <SchoolStatistik />
-      {/*<Agenda />
-      <IndustryPartnershipsPage />       
+      <ThumbnailProfile />
+      <PrestasiSekolah />
+      <KiprahAlumni />
+      <Agenda />
+      
+      {/*<IndustryPartnershipsPage />       
       <TrendingArticles />
       <SchoolStaffTeacher />
       <WidgetKejuruan />

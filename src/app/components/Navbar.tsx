@@ -38,9 +38,7 @@ const Navbar = () => {
     setIsMenuOpen(false);
     setIsSearchOpen(false);
   };
-
-  const isBlogPage = location.pathname === '/blogs';
-
+  
   return (
     <nav className={`${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'} p-4 fixed w-full z-50 top-0 transition-colors duration-300`}>
       <div className="container mx-auto flex justify-between items-center">
@@ -51,7 +49,7 @@ const Navbar = () => {
           <DarkModeToggle />
           <Link
             href="/blogs"
-            className={`transition duration-300 ease-in-out p-2 rounded-full flex items-center ${isBlogPage ? 'bg-blue-600' : `${isDarkMode ? 'text-white hover:text-blue-500' : 'text-black hover:text-blue-500'}`}`}
+            className={`transition duration-300 ease-in-out p-2 rounded-full flex items-center`}
           >
             <Newspaper />
           </Link>

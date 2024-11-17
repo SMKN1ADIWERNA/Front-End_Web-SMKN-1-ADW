@@ -4,10 +4,17 @@ import { motion } from 'framer-motion';
 import { fetchBannerData } from '../api/bannerData';
 import { ArrowLeft, ArrowRight } from 'lucide-react';
 
+interface BannerImage{
+  url: string; // Ensure the interface has the required properties
+  title?: string; // Make title and description optional
+  description?: string;
+}
+
+
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [direction, setDirection] = useState('next');
-  const [images, setImages] = useState([]);
+  const [images, setImages] = useState<BannerImage[]>([]); // Set initial type
   const [isLoading, setIsLoading] = useState(true); 
 
   useEffect(() => {

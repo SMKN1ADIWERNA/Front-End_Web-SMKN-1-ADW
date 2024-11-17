@@ -1,7 +1,7 @@
-"use client"
+"use client";
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { Search, Edit } from 'lucide-react'; 
+import { Search, Edit } from 'lucide-react';
 import { fetchStatistikSekolah } from '../../api/statistikSekolahApi';
 
 const SchoolStatistik = () => {
@@ -46,7 +46,8 @@ const SchoolStatistik = () => {
   }
 
   return (
-    <div className="relative bg-white w-full shadow-lg rounded-3xl -mt-16 z-10 max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto p-6 md:p-10 mb-8 dark:bg-gray-800">
+    <div className="relative dark:bg-gray-900 py-2">
+    <div className="relative bg-white dark:bg-gray-800 w-full shadow-lg rounded-3xl -mt-16 z-10 max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto p-6 md:p-10 mb-8">
       <div className="lg:flex lg:items-center lg:justify-between">
         <div className="flex items-center mb-6 lg:mb-0 lg:w-1/2 lg:text-left text-center flex-col lg:flex-row">
           <img
@@ -56,9 +57,9 @@ const SchoolStatistik = () => {
             style={{ aspectRatio: '1 / 1' }}
           />
           <div>
-            <h2 className="text-xl lg:text-2xl font-semibold">Sambutan Kepala Sekolah</h2>
-            <p className="text-gray-500">{statistik.Nama_Kepala_Sekolah}</p>
-            <p className="text-gray-600 mt-1 mb-4 lg:mb-2 px-4 lg:px-0">
+            <h2 className="text-xl lg:text-2xl font-semibold text-gray-900 dark:text-gray-100">Sambutan Kepala Sekolah</h2>
+            <p className="text-gray-500 dark:text-gray-400">{statistik.Nama_Kepala_Sekolah}</p>
+            <p className="text-gray-600 dark:text-gray-300 mt-1 mb-4 lg:mb-2 px-4 lg:px-0">
               {isExpanded
                 ? statistik.Deskripsi_Text
                 : truncateText(statistik.Deskripsi_Text, 20)}
@@ -81,27 +82,28 @@ const SchoolStatistik = () => {
         </div>
 
         {/* School Stats Section */}
-        <div className="flex lg:w-1/2 border-t border-gray-200 pt-4 lg:pt-0 lg:border-t-0">
+        <div className="flex lg:w-1/2 border-t border-gray-200 dark:border-gray-700 pt-4 lg:pt-0 lg:border-t-0">
           <div className="flex-1 text-center px-4">
-            <div className="text-2xl font-bold">
+            <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">
               {statistik.Guru_Staff}
             </div>
-            <p className="text-gray-600 text-sm">GURU & STAF</p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">GURU & STAF</p>
           </div>
-          <div className="flex-1 text-center px-4 border-l border-gray-300">
-            <div className="text-2xl font-bold">
+          <div className="flex-1 text-center px-4 border-l border-gray-300 dark:border-gray-700">
+            <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">
               {statistik.Siswa}
             </div>
-            <p className="text-gray-600 text-sm">SISWA</p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">SISWA</p>
           </div>
-          <div className="flex-1 text-center px-4 border-l border-gray-300">
-            <div className="text-2xl font-bold">
+          <div className="flex-1 text-center px-4 border-l border-gray-300 dark:border-gray-700">
+            <div className="text-2xl font-bold text-gray-900 dark:text-gray-100">
               {statistik.Rombel}
             </div>
-            <p className="text-gray-600 text-sm">ROMBEL</p>
+            <p className="text-gray-600 dark:text-gray-400 text-sm">ROMBEL</p>
           </div>
         </div>
       </div>
+    </div>
     </div>
   );
 };
