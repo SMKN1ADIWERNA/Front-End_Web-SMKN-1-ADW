@@ -5,6 +5,10 @@ import Agenda from "./agenda/agenda";
 import ThumbnailProfile from "./beranda/thumbnailprofile";
 import PrestasiSekolah from "./beranda/prestasisekolah";
 import KiprahAlumni from "./beranda/KiprahAlumni";
+import Kerjasama from "./beranda/kerjasama";
+import ProgramKeahlian from "./beranda/programkeahlian";
+import Fasilitas from "./beranda/fasilitas";
+import Artikel from "./beranda/artikel";
 
 
 export default function Home() {
@@ -15,6 +19,10 @@ export default function Home() {
       <ThumbnailProfile />
       <PrestasiSekolah />
       <KiprahAlumni />
+      <Kerjasama />
+      <ProgramKeahlian />
+      <Fasilitas />
+      <Artikel />
       <Agenda />
       
       {/*<IndustryPartnershipsPage />       

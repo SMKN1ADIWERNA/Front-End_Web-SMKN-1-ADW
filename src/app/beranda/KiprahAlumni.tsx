@@ -37,7 +37,8 @@ const KiprahAlumni: React.FC = () => {
                 </h1>
                 <p className="text-lg text-gray-600 mb-12 md:text-left dark:text-gray-300">
                     Lihat Kiprah Alumni Unggulan Kami
-                </p>      <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
+                </p>      
+                <div className="grid gap-8 md:grid-cols-2 lg:grid-cols-3">
                     {testimonies.map((testimony) => (
                         <div
                             key={testimony.id}
