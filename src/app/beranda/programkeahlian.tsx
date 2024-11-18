@@ -1,37 +1,42 @@
 import React from "react";
-import { GraduationCap, Wrench, Code, Briefcase, Truck, Layout } from "lucide-react";
+import { GraduationCap, Wrench, Code, Briefcase, Truck, Layout, Router, Building2, FlameKindling, Cable, Settings, Car, Zap } from "lucide-react";
 
 const ProgramKeahlian: React.FC = () => {
   const programs = [
     {
       id: 1,
-      name: "Teknik Kendaraan Ringan Otomotif",
-      icon: <Truck className="w-12 h-12 text-blue-600" />,
+      name: "Teknik Jaringan Komputer Dan Telekomunikasi",
+      icon: <Router className="w-12 h-12 text-blue-600" />,
     },
     {
       id: 2,
-      name: "Teknik dan Bisnis Sepeda Motor",
-      icon: <Wrench className="w-12 h-12 text-green-600" />,
+      name: "Desain Pemodelan Dan Informasi Bangunan",
+      icon: <Building2 className="w-12 h-12 text-purple-600" />,
     },
     {
       id: 3,
-      name: "Rekayasa Perangkat Lunak",
-      icon: <Code className="w-12 h-12 text-purple-600" />,
+      name: "Teknik Pengelasan Fabrikasi Logam",
+      icon: <FlameKindling className="w-12 h-12 text-green-600" />,
     },
     {
       id: 4,
-      name: "Bisnis Daring dan Pemasaran",
-      icon: <Briefcase className="w-12 h-12 text-yellow-600" />,
+      name: "Teknik Elektronika",
+      icon: <Cable className="w-12 h-12 text-red-600" />,
     },
     {
       id: 5,
-      name: "Desain Pemodelan dan Informasi Bangunan",
-      icon: <Layout className="w-12 h-12 text-red-600" />,
+      name: "Teknik Ketenagalistrikan",
+      icon: <Zap className="w-12 h-12 text-yellow-600" />,
     },
     {
       id: 6,
-      name: "Teknik Elektronika Industri",
-      icon: <GraduationCap className="w-12 h-12 text-indigo-600" />,
+      name: "Teknik Mesin",
+      icon: <Settings className="w-12 h-12 text-indigo-600" />,
+    },
+    {
+      id: 7,
+      name: "Teknik Otomotif",
+      icon: <Car className="w-12 h-12 text-indigo-600" />,
     },
   ];
 
