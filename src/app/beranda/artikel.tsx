@@ -8,7 +8,7 @@ const Artikel: React.FC = () => {
             description:
                 "Artikel ini membahas pentingnya pelatihan teknologi untuk guru agar siap menghadapi tantangan era digital.",
             date: "17 November 2024",
-            image: "https://source.unsplash.com/400x200/?teacher,training",
+            image: "https://media.suara.com/pictures/480x260/2023/09/14/82589-channel-whatsapp.jpg",
         },
         {
             id: 2,
@@ -65,22 +65,23 @@ const Artikel: React.FC = () => {
                     {articles.map((article) => (
                         <div
                             key={article.id}
-                            className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200"
+                            className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200 flex flex-col"
                         >
                             <img
                                 src={article.image}
                                 alt={article.title}
                                 className="w-full h-48 object-cover"
                             />
-                            <div className="p-4 flex flex-col">
+                            <div className="p-4 flex flex-col flex-1">
                                 <h2 className="text-lg font-bold text-gray-900">{article.title}</h2>
                                 <p className="text-sm text-gray-600 mb-2">{article.date}</p>
-                                <p className="text-gray-700 mb-4">{article.description}</p>
+                                <p className="text-gray-700 mb-4 flex-grow">{article.description}</p>
                                 <button className="mt-auto px-4 py-2 bg-blue-600 text-white text-sm font-semibold rounded hover:bg-blue-700 transition">
                                     Baca Selengkapnya
                                 </button>
                             </div>
                         </div>
+
                     ))}
                 </div>
             </div>
