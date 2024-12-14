@@ -48,7 +48,7 @@ const Navbar = () => {
         <div className="hidden md:flex items-center relative">
           <DarkModeToggle />
           <Link
-            href="/blogs"
+            href="/artikel"
             className={`transition duration-300 ease-in-out p-2 rounded-full flex items-center`}
           >
             <Newspaper />
