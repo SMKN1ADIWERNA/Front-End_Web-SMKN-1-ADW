@@ -1,28 +1,27 @@
-"use client"
-import React, { useState, useEffect } from 'react';
-import { motion } from 'framer-motion';
-import { fetchBannerData } from '../api/bannerData';
-import { ArrowLeft, ArrowRight } from 'lucide-react';
+"use client";
+import React, { useState, useEffect } from "react";
+import { motion } from "framer-motion";
+import { fetchBannerData } from "../api/bannerData";
+import { ArrowLeft, ArrowRight } from "lucide-react";
 
-interface BannerImage{
+interface BannerImage {
   url: string; // Ensure the interface has the required properties
   title?: string; // Make title and description optional
   description?: string;
 }
 
-
 const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
-  const [direction, setDirection] = useState('next');
+  const [direction, setDirection] = useState("next");
   const [images, setImages] = useState<BannerImage[]>([]); // Set initial type
-  const [isLoading, setIsLoading] = useState(true); 
+  const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
     const fetchData = async () => {
       const bannerData = await fetchBannerData();
       setImages(bannerData);
-      setIsLoading(false); 
-      
+      setIsLoading(false);
+
       // Preload images to cache them
       bannerData.forEach((img) => {
         const imgElement = new Image();
@@ -33,29 +32,31 @@ const HeroSection = () => {
   }, []);
 
   useEffect(() => {
-    if (images.length > 0) { 
+    if (images.length > 0) {
       const interval = setInterval(() => {
         handleNext();
       }, 5000);
 
       return () => clearInterval(interval);
     }
-  }, [currentIndex, images]); 
+  }, [currentIndex, images]);
 
   const handleNext = () => {
-    setDirection('next');
+    setDirection("next");
     setCurrentIndex((prevIndex) => (prevIndex + 1) % images.length);
   };
 
   const handlePrev = () => {
-    setDirection('prev');
-    setCurrentIndex((prevIndex) => (prevIndex - 1 + images.length) % images.length);
+    setDirection("prev");
+    setCurrentIndex(
+      (prevIndex) => (prevIndex - 1 + images.length) % images.length
+    );
   };
 
   return (
     <section className="relative w-full h-[90vh] bg-cover bg-center overflow-hidden">
       <div className="relative w-full h-full">
-        {isLoading ? ( 
+        {isLoading ? (
           <div className="flex justify-center items-center h-full">
             <p className="text-white text-xl">Loading...</p>
           </div>
@@ -63,16 +64,21 @@ const HeroSection = () => {
           <>
             <motion.div
               className="flex w-full h-full"
-              initial={{ x: '0%' }}
-              animate={{ x: direction === 'next' ? `-${currentIndex * 100}%` : `-${currentIndex * 100}%` }}
-              transition={{ duration: 0.5, ease: 'easeInOut' }}
+              initial={{ x: "0%" }}
+              animate={{
+                x:
+                  direction === "next"
+                    ? `-${currentIndex * 100}%`
+                    : `-${currentIndex * 100}%`,
+              }}
+              transition={{ duration: 0.5, ease: "easeInOut" }}
             >
               {images.map((image, index) => (
                 <motion.div key={index} className="w-full h-full flex-shrink-0">
-                  <img 
-                    src={image.url} 
-                    alt={image.title} 
-                    className="w-full h-full object-cover" 
+                  <img
+                    src={image.url}
+                    alt={image.title}
+                    className="w-full h-full object-cover"
                     loading="lazy" // Lazy load images
                   />
                 </motion.div>
@@ -86,7 +92,16 @@ const HeroSection = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
               >
-                <h1 className="text-4xl lg:text-5xl font-bold mb-4">{images[currentIndex]?.title}</h1>
+                <h1
+                  className="text-4xl lg:text-5xl font-bold mb-4 leading-tight"
+                  style={{
+                    fontSize: "clamp(1.5rem, 5vw, 3rem)", // Ukuran minimum, responsif, dan maksimum
+                    whiteSpace: "normal", // Membolehkan pembungkusan teks
+                    wordBreak: "break-word", // Memecah kata panjang
+                  }}
+                >
+                  {images[currentIndex]?.title}
+                </h1>
               </motion.div>
 
               <motion.div
@@ -95,7 +110,9 @@ const HeroSection = () => {
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.6 }}
               >
-                <p className="mb-6 text-lg">{images[currentIndex]?.description}</p>
+                <p className="mb-6 text-lg">
+                  {images[currentIndex]?.description}
+                </p>
                 <motion.button
                   className="px-6 py-3 bg-blue-600 hover:bg-blue-700 text-white rounded-full inline-flex items-center"
                   whileHover={{ scale: 1.1 }}

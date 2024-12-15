@@ -48,7 +48,7 @@ const SchoolStatistik = () => {
   }
 
   return (
-    <div className="relative dark:bg-gray-900 py-2">
+    <div className="relative dark:bg-gray-900 py-2 px-4 sm:px-6"> {/* Tambahkan px-4 dan sm:px-6 */}
       <div className="relative bg-white dark:bg-gray-800 w-full shadow-lg rounded-3xl -mt-16 z-10 max-w-screen-lg xl:max-w-screen-xl 2xl:max-w-screen-2xl mx-auto p-6 md:p-10 mb-8">
         <div className="lg:flex lg:items-center lg:justify-between">
           <div className="flex items-center mb-6 lg:mb-0 lg:w-1/2 lg:text-left text-center flex-col lg:flex-row">
