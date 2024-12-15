@@ -1,5 +1,13 @@
 import React from "react";
-import { GraduationCap, Wrench, Code, Briefcase, Truck, Layout, Router, Building2, FlameKindling, Cable, Settings, Car, Zap } from "lucide-react";
+import {
+  Router,
+  Building2,
+  FlameKindling,
+  Cable,
+  Zap,
+  Settings,
+  Car,
+} from "lucide-react";
 
 const ProgramKeahlian: React.FC = () => {
   const programs = [
@@ -42,24 +50,40 @@ const ProgramKeahlian: React.FC = () => {
 
   return (
     <div className="relative dark:bg-gray-900">
-    <div className="container mx-auto px-4 py-8 dark:bg-gray-900">
-                <h1 className="text-2xl font-bold text-blue-600 mb-1 mt-3 md:text-left dark:text-blue-400">
-                    Program Keahlian
-                </h1>
-                <p className="text-lg text-gray-600 mb-12 md:text-left dark:text-gray-300">
-                    Lihat Program Keahlian Sekolah Unggulan Kami
-                </p>      <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
-        {programs.map((program) => (
-          <div
-            key={program.id}
-            className="bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex flex-col items-center text-center"
-          >
-            <div className="mb-4">{program.icon}</div>
-            <h2 className="text-lg font-semibold text-gray-900">{program.name}</h2>
+      <div className="container mx-auto px-4 py-8">
+        <h1 className="text-2xl font-bold text-blue-600 mb-1 mt-3 dark:text-blue-400">
+          Program Keahlian
+        </h1>
+        <p className="text-lg text-gray-600 mb-12 dark:text-gray-300">
+          Lihat Program Keahlian Sekolah Unggulan Kami
+        </p>
+        <div className="grid grid-cols-4 gap-8">
+          {/* Left cards */}
+          <div className="col-span-3 grid grid-cols-3 gap-4">
+            {programs.slice(0, 6).map((program) => (
+              <div
+                key={program.id}
+                className="bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex flex-col items-center text-center h-full"
+              >
+                <div className="mb-4">{program.icon}</div>
+                <h2 className="text-lg font-semibold text-gray-900">
+                  {program.name}
+                </h2>
+              </div>
+            ))}
           </div>
-        ))}
+
+          {/* Right card */}
+          <div className="col-span-1 bg-white shadow-lg rounded-lg p-6 border border-gray-200 flex flex-col items-center justify-center text-center h-full">
+            <div>
+              <div className="mb-4">{programs[6].icon}</div>
+              <h2 className="text-lg font-semibold text-gray-900">
+                {programs[6].name}
+              </h2>
+            </div>
+          </div>
+        </div>
       </div>
-    </div>
     </div>
   );
 };
