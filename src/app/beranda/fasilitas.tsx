@@ -1,5 +1,6 @@
-'use client'
+'use client';
 import React, { useEffect, useState } from "react";
+import Link from "next/link"; // Import Link untuk navigasi
 
 export const fetchFacilitiesData = async () => {
   try {
@@ -38,7 +39,7 @@ export const fetchFacilitiesData = async () => {
 
 const Fasilitas: React.FC = () => {
   const [facilities, setFacilities] = useState<
-    { id: number; name: string; image: string; description: string }[]
+    { id: number; name: string; image: string; description: string; slug: string }[]
   >([]);
   const [loading, setLoading] = useState<boolean>(true);
 
@@ -66,24 +67,23 @@ const Fasilitas: React.FC = () => {
         ) : (
           <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
             {facilities.map((facility) => (
-              <div
-                key={facility.id}
-                className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200"
-              >
-                <img
-                  src={facility.image}
-                  alt={facility.name}
-                  className="w-full h-48 object-cover"
-                />
-                <div className="p-4">
-                  <h2 className="text-lg font-semibold text-gray-900 text-center">
-                    {facility.name}
-                  </h2>
-                  <p className="text-sm text-gray-600 text-center mt-2">
-                    {facility.description}
-                  </p>
+              <Link href={`/fasilitas/${facility.slug}`} key={facility.id}>
+                <div className="bg-white shadow-lg rounded-lg overflow-hidden border border-gray-200 cursor-pointer hover:shadow-xl">
+                  <img
+                    src={facility.image}
+                    alt={facility.name}
+                    className="w-full h-48 object-cover"
+                  />
+                  <div className="p-4">
+                    <h2 className="text-lg font-semibold text-gray-900 text-center">
+                      {facility.name}
+                    </h2>
+                    <p className="text-sm text-gray-600 text-center mt-2">
+                      {facility.description}
+                    </p>
+                  </div>
                 </div>
-              </div>
+              </Link>
             ))}
           </div>
         )}

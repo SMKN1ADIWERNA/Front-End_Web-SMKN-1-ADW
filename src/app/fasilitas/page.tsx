@@ -3,7 +3,7 @@ import React from 'react';
 import Cover from './cover';
 import CardFacility from './cardfasility';
 
-const podcastpagee = () => {
+const fasilitaspagee = () => {
   return (
     <div>
       <Cover />
@@ -14,4 +14,4 @@ const podcastpagee = () => {
   );
 };
 
-export default podcastpagee;
+export default fasilitaspagee;
