@@ -40,7 +40,7 @@ const Navbar = () => {
   };
   
   return (
-    <nav className={`${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'} p-4 fixed w-full z-50 top-0 transition-colors duration-300`}>
+    <nav className={`${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'} p-2 fixed w-full z-50 top-0 transition-colors duration-300`}>
       <div className="container mx-auto flex justify-between items-center">
         <LogoComponent />
 

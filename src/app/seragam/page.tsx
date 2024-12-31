@@ -3,9 +3,9 @@ import React from 'react';
 
 const podcastpagee = () => {
   return (
-    <div>
-      <h1>This Page Working!</h1>
-      <p>Go a head dude.</p>
+    <div className="container mx-auto mt-4">
+      <h1 className="text-2xl font-bold">This Page Working!</h1>
+      <p>Go ahead, dude.</p>
     </div>
   );
 };
