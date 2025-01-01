@@ -1,13 +1,13 @@
-// app/profil/page.tsx
-import React from 'react';
+import Cover from "./cover";
+import Card from "./card";
 
-const podcastpagee = () => {
+const PrestasiSiswa = () => {
   return (
-    <div>
-      <h1>This Page Working!</h1>
-      <p>Go a head dude.</p>
+    <div className="min-h-screen bg-gray-100">
+      <Cover />
+      <Card />
     </div>
   );
 };
 
-export default podcastpagee;
+export default PrestasiSiswa;

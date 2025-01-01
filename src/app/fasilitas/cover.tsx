@@ -3,7 +3,7 @@ import { Building, Compass, Book } from 'lucide-react';
 
 const Cover: React.FC = () => {
   return (
-    <div className="relative h-auto py-10 bg-white">
+    <div className="relative h-auto py-12 bg-white">
       {/* Background Image */}
       <div
         className="absolute inset-0 bg-cover bg-center h-full"

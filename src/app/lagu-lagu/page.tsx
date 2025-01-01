@@ -1,13 +1,13 @@
-// app/profil/page.tsx
-import React from 'react';
+import React from 'react';import LaguLaguSekolah from "./lagusekolah";
+import Cover from "./cover";
 
-const podcastpagee = () => {
+const LaguSekolah = () => {
   return (
     <div>
-      <h1>This Page Working!</h1>
-      <p>Go a head dude.</p>
+      <Cover />
+      <LaguLaguSekolah />,
     </div>
   );
 };
 
-export default podcastpagee;
+export default LaguSekolah;
