@@ -1,7 +1,7 @@
 "use client"
 import React, { useState, useEffect } from 'react';
 import Link from 'next/link';
-import { Newspaper, Search, Menu, X } from 'lucide-react';
+import { Newspaper } from 'lucide-react';
 import DarkModeToggle from './DarkModeToggle';
 import DesktopLinks from './DesktopLinks';
 import MobileMenu from './MobileMenu';
@@ -38,48 +38,62 @@ const Navbar = () => {
     setIsMenuOpen(false);
     setIsSearchOpen(false);
   };
-  
+
   return (
     <nav className={`${isDarkMode ? 'bg-gray-800' : 'bg-gray-100'} p-2 fixed w-full z-50 top-0 transition-colors duration-300`}>
       <div className="container mx-auto flex justify-between items-center">
         <LogoComponent />
 
         <DesktopLinks />
-        <div className="hidden md:flex items-center relative">
-          <DarkModeToggle />
+        {/* Desktop Search Button */}
+        <div className="hidden md:flex items-center relative space-x-4">
+          <span
+            className={`flex items-center px-2  rounded-lg transition-transform transform active:scale-95 active:shadow-inner ${
+              isDarkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'
+              }`}
+            >
+              <DarkModeToggle />
+              Tema
+            </span>
           <Link
             href="/artikel"
             className={`transition duration-300 ease-in-out p-2 rounded-full flex items-center`}
           >
             <Newspaper />
           </Link>
-          <div className="flex items-center ml-4 relative">
-            <svg
-              className={`w-6 h-6 absolute left-2 ${isDarkMode ? 'text-gray-400' : 'text-gray-600'}`}
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
+          <div className="ml-4">
+            <button
+              onClick={toggleSearch}
+              className={`px-11 py-2 rounded-lg flex items-center gap-2 transition-transform transform active:scale-95 active:shadow-inner ${
+                isDarkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'
+              }`}
             >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth="2"
-                d="M21 21l-4.35-4.35m2.8-5.4a8.25 8.25 0 11-16.5 0 8.25 8.25 0 0116.5 0z"
-              ></path>
-            </svg>
-            <input
-              type="text"
-              placeholder="Search..."
-              className={`px-4 py-2 pl-10 rounded-md w-48 ${isDarkMode ? 'bg-gray-700 text-white' : 'bg-gray-200 text-black'}`}
-            />
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth="2"
+                  d="M21 21l-4.35-4.35m2.8-5.4a8.25 8.25 0 11-16.5 0 8.25 8.25 0 0116.5 0z"
+                ></path>
+              </svg>
+              Pencarian
+            </button>
           </div>
         </div>
+        {/* Mobile Search Button */}
         <div className="md:hidden flex items-center">
           <DarkModeToggle />
           <button
             onClick={toggleSearch}
-            className={`focus:outline-none mr-2 transform active:scale-95 active:shadow-inner ml-2 ${isDarkMode ? 'text-white' : 'text-black'}`}
+            className={`focus:outline-none mr-2 transform active:scale-95 active:shadow-inner ml-2 ${
+              isDarkMode ? 'text-white' : 'text-black'
+            }`}
           >
             <svg
               className="w-6 h-6"

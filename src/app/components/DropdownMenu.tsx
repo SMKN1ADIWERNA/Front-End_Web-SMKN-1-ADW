@@ -133,7 +133,9 @@ const DropdownMenu: React.FC = () => {
   onClick={toggleDropdown}
   className="text-gray-800 bg-white hover:bg-gray-200 transition duration-300 ease-in-out p-2 rounded-full shadow-md flex items-center"
 >
+  <span className='mr-1'>
   Lainnya
+  </span>
   <svg className="w-4 h-4 inline ml-1" fill="none" stroke="currentColor" viewBox="0 0 24 24">
     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
   </svg>
