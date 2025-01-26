@@ -5,6 +5,14 @@ const SearchInput = () => {
   const [query, setQuery] = useState('');
   const [showResults, setShowResults] = useState(false);
 
+  // Define routes first
+  const routes = [
+    { title: "Home", path: "/" },
+    { title: "Blogs", path: "/blogs" },
+    { title: "Gallery", path: "/gallery" },
+    // Add more routes here
+  ];
+
   // Filter routes that have a title and match the query
   const filteredRoutes = routes.filter(
     (route) =>
