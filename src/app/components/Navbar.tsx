@@ -37,20 +37,19 @@ const Navbar: React.FC = () => {
         <div className="hidden md:flex items-center space-x-4">
           <ThemeToggle />
           <div className="hidden md:flex items-center ">
-
-          <Link
-            href="/artikel"
-            className={`transition duration-300 ease-in-out p-2 rounded-full flex items-center`}
+            <Link
+              href="/artikel"
+              className={`transition duration-300 ease-in-out p-2 rounded-full flex items-center`}
             >
-            <Newspaper />
-          </Link>
-          <Link
-            href="/artikel"
-            className={`transition duration-300 ease-in-out p-2 rounded-full flex items-center`}
+              <Newspaper />
+            </Link>
+            <Link
+              href="/gallery"
+              className={`transition duration-300 ease-in-out p-2 rounded-full flex items-center`}
             >
-            <Image />
-          </Link>
-            </div>
+              <Image />
+            </Link>
+          </div>
           <SearchButton onClick={toggleSearch} />
         </div>
         <HamburgerMenu
