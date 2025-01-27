@@ -1,6 +1,6 @@
 import React from 'react';
 import Link from 'next/link';
-import Logo from '../favicon.ico';
+import Logo from '../../favicon.ico';
 import { Leaf } from 'lucide-react'; // Import the Leaf icon from lucide-react
 
 const LogoComponent = () => {

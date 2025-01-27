@@ -1,6 +1,6 @@
 import { fetcher } from '../lib/fetcher';
 import ArticleCard from './ArticleCard';
-import { fetchArticles } from '../api/artikel';
+import { fetchArticles } from '../../api/artikel';
 
 
 export default async function ArticlesPage() {

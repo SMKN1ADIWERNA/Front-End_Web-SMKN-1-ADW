@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import { fetchFacilitiesData } from "../api/fetchFacilities";
+import { fetchFacilitiesData } from "../../api/fetchFacilities";
 import { Image } from "lucide-react";
 import Link from "next/link";
 

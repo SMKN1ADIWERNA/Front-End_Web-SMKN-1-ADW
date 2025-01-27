@@ -2,7 +2,7 @@
 import React, { useRef, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import MenuLinks from './MenuLinks';
-import SearchInput from './SearchInput';
+import SearchInput from '../search/SearchInput';
 
 const MobileMenu = ({ isMenuOpen, isSearchOpen, closeModals }: { isMenuOpen: boolean, isSearchOpen: boolean, closeModals: () => void }) => {
   const modalRef = useRef<HTMLDivElement>(null);

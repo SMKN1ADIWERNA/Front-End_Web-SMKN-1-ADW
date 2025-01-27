@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import localFont from "next/font/local";
 import { Roboto } from "next/font/google";
-import Navbar from "./components/Navbar";
+import Navbar from "./components/navigation/Navbar";
 import "./globals.css";
 
 // Import Roboto font

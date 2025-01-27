@@ -1,7 +1,7 @@
 'use client';
 import React, { useEffect, useState } from 'react';
 import Link from 'next/link';
-import { fetchEkstrakurikuler } from '../api/ekstrakurikuler';
+import { fetchEkstrakurikuler } from '../../api/ekstrakurikuler';
 
 interface Activity {
   id: number;

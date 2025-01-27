@@ -2,11 +2,11 @@
 
 import React, { useState } from "react";
 import Link from "next/link";
-import LogoComponent from "./Logo";
+import LogoComponent from "../ui/Logo";
 import DesktopLinks from "./DesktopLinks";
 import MobileMenu from "./MobileMenu";
-import ThemeToggle from "./ThemeToggle";
-import SearchButton from "./SearchButton";
+import ThemeToggle from "../toggles/ThemeToggle";
+import SearchButton from "../search/SearchButton";
 import HamburgerMenu from "./HamburgerMenu";
 import { Newspaper, Image } from "lucide-react";
 
